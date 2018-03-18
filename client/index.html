@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+	<title>MongoDB</title>
+</head>
+<body ng-app="myApp" ng-controller="ctrl">
+	<form>
+		<p>Nom <input type:'text' ng-model="perso.nom"></p>
+		<p>Prénom <input type:'text' ng-model="perso.prenom"></p>
+		<p>Age <input type:'text' ng-model="perso.age"></p>
+		<p>Poids <input type:'text' ng-model="perso.poids"></p>
+		<button ng-click="traitForm(perso)">Valider</button>
+	</form>
+	<h3 ng-show="error">Informations manquantes.</h3>
+	<!-- {{listPerso}} -->
+	<ul>
+		<li ng-repeat="perso in listPerso">{{perso.nom}} {{perso.prenom}} <span ng-click="delete(perso)">X</span> </li>
+	</ul>
+
+	<script src="/assets/lib/angular/angular.min.js"></script>
+	<script src="/assets/lib/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/assets/lib/angular-resource/angular-resource.js"></script>
+	<script src="/app/app.js"></script>
+	<script src="app/services/perso.service.js"></script>
+	<script src="/app/controller/ctrl.js"></script>
+</body>
+</html>
